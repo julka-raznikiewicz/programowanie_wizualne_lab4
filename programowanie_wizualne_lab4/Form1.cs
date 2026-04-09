@@ -60,5 +60,67 @@ namespace programowanie_wizualne_lab4
             currentImage = RotateImage(currentImage, angle);
             pictureBox1.Image = currentImage;
         }
+
+        private Bitmap InvertColors(Bitmap source)
+        {
+            Bitmap result = new Bitmap(source.Width, source.Height);
+
+            for (int x = 0; x < source.Width; x++)
+            {
+                for (int y = 0; y < source.Height; y++)
+                {
+                    Color c = source.GetPixel(x, y);
+
+                    Color inverted = Color.FromArgb(
+                        255 - c.R,
+                        255 - c.G,
+                        255 - c.B);
+
+                    result.SetPixel(x, y, inverted);
+                }
+            }
+
+            return result;
+        }
+
+        private void btnInvert_Click(object sender, EventArgs e)
+        {
+            if (currentImage == null)
+            {
+                MessageBox.Show("Najpierw wczytaj obraz.");
+                return;
+            }
+
+            currentImage = InvertColors(currentImage);
+            pictureBox1.Image = currentImage;
+        }
+
+        private Bitmap UpsideDown(Bitmap source)
+        {
+            Bitmap result = new Bitmap(source.Width, source.Height);
+
+            for (int x = 0; x < source.Width; x++)
+            {
+                for (int y = 0; y < source.Height; y++)
+                {
+                    Color c = source.GetPixel(x, y);
+                    result.SetPixel(x, source.Height - 1 - y, c);
+                }
+            }
+
+            return result;
+        }
+
+        private void btnUpsideDown_Click(object sender, EventArgs e)
+        {
+            if (currentImage == null)
+            {
+                MessageBox.Show("Najpierw wczytaj obraz.");
+                return;
+            }
+
+            currentImage = UpsideDown(currentImage);
+            pictureBox1.Image = currentImage;
+        }
     }
 }

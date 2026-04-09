@@ -78,6 +78,7 @@
             btnInvert.TabIndex = 3;
             btnInvert.Text = "Negatyw";
             btnInvert.UseVisualStyleBackColor = true;
+            btnInvert.Click += btnInvert_Click;
             // 
             // btnUpsideDown
             // 
@@ -87,6 +88,7 @@
             btnUpsideDown.TabIndex = 4;
             btnUpsideDown.Text = "Do góry nogami";
             btnUpsideDown.UseVisualStyleBackColor = true;
+            btnUpsideDown.Click += btnUpsideDown_Click;
             // 
             // btnOnlyGreen
             // 
