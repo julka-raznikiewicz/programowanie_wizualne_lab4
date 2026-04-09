@@ -98,6 +98,7 @@
             btnOnlyGreen.TabIndex = 5;
             btnOnlyGreen.Text = "Zielony";
             btnOnlyGreen.UseVisualStyleBackColor = true;
+            btnOnlyGreen.Click += btnOnlyGreen_Click;
             // 
             // rb90
             // 
