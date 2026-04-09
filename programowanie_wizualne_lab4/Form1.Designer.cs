@@ -68,6 +68,7 @@
             btnRotate.TabIndex = 2;
             btnRotate.Text = "Obróć";
             btnRotate.UseVisualStyleBackColor = true;
+            btnRotate.Click += btnRotate_Click;
             // 
             // btnInvert
             // 
